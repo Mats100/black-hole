@@ -1,8 +1,7 @@
 import os
 
-if not os.path.exists('myfiles'):
-    os.mkdir('myfiles')
+os.makedirs('myfiles', exist_ok=True)
 for i in range(5):
     file_name = f'myfiles/{i}.txt'
-    with open(file_name, "w") as f:
-        f.write(str(i))
+    with open(file_name, "w+") as f:
+        f.write(str(i) + "\n")
