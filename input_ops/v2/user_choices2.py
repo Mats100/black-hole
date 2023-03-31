@@ -9,7 +9,7 @@ while True:
         scores.update({name_input: 0})
 
     for i, name in scores.items():
-        print(f"\n{i}, Enter scores for each user (including yourself):")
+        print(f"\n{i}, Enter scores for others:")
         for j, other_user in scores.items():
             if i == j:
                 continue
