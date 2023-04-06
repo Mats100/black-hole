@@ -17,8 +17,9 @@ for i, name in enumerate(data):
                 print("Invalid score, Please enter a number between 0 and 10.")
         scores[(i, j)] = int(score)
 
-print("\nTotal Scores:")
-for i, name in enumerate(data):
-    user_score = sum([scores[(j, i)] for j in range(choices) if j != i])
-    user_score += scores[(i, i)]
-    print(f"{name} got a total score : {user_score}")
+with open("output.txt", "a") as f:
+    print("\nTotal Scores:", file=f)
+    for i, name in enumerate(data):
+        user_score = sum([scores[(j, i)] for j in range(choices) if j != i])
+        user_score += scores[(i, i)]
+        print(f"{name} got a total score : {user_score}", file=f)
